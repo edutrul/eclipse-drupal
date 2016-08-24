@@ -1,8 +1,12 @@
-# ECLIPSE DRUPAL SETTINGS #
+# Eclipse Drupal Settings #
 
 Here goes all Eclipse for setting up Drupal
 
-# INSTALLATION #
+## Getting Started
+These instructions are for settings up drupal coding standards and templates for drupal 7 and drupal 8.
+
+
+### Installing
 
 Open eclipse preferences
 
@@ -23,4 +27,14 @@ For Coding standards:
 Code > Style > Formatter
 Click import and open
 eclipse_drupal_api_templates.xml
+
+## Authors
+
+* **Heissen López** - *Initial setup* - (https://github.com/heilop)
+* **Eduardo Telaya** - *Update d7, d8, push settings* -(https://github.com/edutrul)
+
+
+## License
+
+This project is licensed under the MIT License
 
