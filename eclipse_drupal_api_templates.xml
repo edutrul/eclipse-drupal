@@ -24,46 +24,6 @@ ${cursor}</template><template autoinsert="false" context="php-global-members" de
 		${cursor};
 	}
 }
-</template><template autoinsert="true" context="php" deleted="false" description="Renders link functionality" enabled="true" name="d8_l">use Drupal\Core\Link;
-use Drupal\Core\Url;
-$$args = ['arg-a' =&gt; 'A', 'arg-b' =&gt; 'B'];
-/* $$ drupal console router:debug | search "/user " */
-$$url = Url::fromRoute('user.page', $$args);
-$$link = Link::fromTextAndUrl('Page title', $$url)-&gt;toString();</template><template autoinsert="true" context="php" deleted="false" description="Renders link functionality similar to d8_l" enabled="true" name="d8_link">use Drupal\Core\Link;
-use Drupal\Core\Url;
-$$args = ['arg-a' =&gt; 'A', 'arg-b' =&gt; 'B'];
-/* $$ drupal console router:debug | search "/user " */
-$$url = Url::fromRoute('user.page', $$args);
-$$link = Link::fromTextAndUrl('Page title', $$url)-&gt;toString();</template><template autoinsert="true" context="php" deleted="false" description="" enabled="true" name="d8_node_load">use \Drupal\node\Entity\Node;
-Node::load($$nid);</template><template autoinsert="true" context="php" deleted="false" description="Taxonomy term load" enabled="true" name="d8_taxonomy_term_load">use \Drupal\taxonomy\Entity\Term;
-Term::load($$tid);</template><template autoinsert="true" context="php" deleted="false" description="Taxonomy term load" enabled="true" name="d8_term_load">use \Drupal\taxonomy\Entity\Term;
-Term::load($$tid);</template><template autoinsert="false" context="php-statements" deleted="false" description="echo a string" enabled="true" id="org.eclipse.php.ui.editor.templates.php.echo" name="eco">echo("${}");
-${cursor}</template><template autoinsert="false" context="php-statements" deleted="false" description="elseif statement" enabled="true" id="org.eclipse.php.ui.editor.templates.php.elif" name="elif">elseif (${condition}) {
-	${cursor};
-}
-</template><template autoinsert="false" context="php-statements" deleted="false" description="else statement" enabled="true" id="org.eclipse.php.ui.editor.templates.php.else" name="els">else {
-	${cursor};
-}
-</template><template autoinsert="false" context="php-type-members" deleted="false" description="function statement" enabled="true" id="org.eclipse.php.ui.editor.templates.php.fnc" name="fnc">function ${function_name}(${dollar}${param}) {
-	${cursor};
-}
-</template><template autoinsert="false" context="php-global-members" deleted="false" description="function statement" enabled="true" id="org.eclipse.php.ui.editor.templates.php.fnc1" name="fnc">function ${function_name}(${dollar}${param}) {
-	${cursor};
-}
-</template><template autoinsert="false" context="php-statements" deleted="false" description="for statement" enabled="true" id="org.eclipse.php.ui.editor.templates.php.for" name="for">for (${dollar}${index} = 0; ${dollar}${index} &lt; ${number_variable}; ${dollar}${index}++) {
-	${line_selection}${cursor}
-}</template><template autoinsert="false" context="php-statements" deleted="false" description="foreach statement" enabled="true" id="org.eclipse.php.ui.editor.templates.php.foreach" name="fore">foreach (${dollar}${array_expression} as ${dollar}${value}) {
-	${cursor};
-}
-</template><template autoinsert="false" context="php-statements" deleted="false" description="foreach with key statement" enabled="true" id="org.eclipse.php.ui.editor.templates.php.foreachkey" name="forek">foreach (${dollar}${array_expression} as ${dollar}${key} =&gt; ${dollar}${value}) {
-	${cursor};
-}
-</template><template autoinsert="false" context="php-type-members" deleted="false" description="function statement" enabled="true" id="org.eclipse.php.ui.editor.templates.php.function" name="function">function ${function_name}(${dollar}${param}) {
-	${cursor};
-}
-</template><template autoinsert="false" context="php-global-members" deleted="false" description="function statement" enabled="true" id="org.eclipse.php.ui.editor.templates.php.function1" name="function">function ${function_name}(${dollar}${param}) {
-	${cursor};
-}
 </template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook action info - Declare information about one or more Drupal actions." enabled="true" name="d7hook_action_info">/**
  * Implements hook_action_info().
  */
@@ -1657,7 +1617,53 @@ function ${module_name}_xmlrpc() {
  */
 function ${module_name}_xmlrpc_alter(&amp;$$methods) {
   ${cursor}
-}</template><template autoinsert="false" context="php-statements" deleted="false" description="if statement" enabled="true" id="org.eclipse.php.ui.editor.templates.php.if" name="if">if (${condition}) {
+}</template><template autoinsert="true" context="php" deleted="false" description="Renders link functionality" enabled="true" name="d8_l">use Drupal\Core\Link;
+use Drupal\Core\Url;
+$$args = ['arg-a' =&gt; 'A', 'arg-b' =&gt; 'B'];
+/* $$ drupal console router:debug | search "/user " */
+$$url = Url::fromRoute('user.page', $$args);
+$$link = Link::fromTextAndUrl('Page title', $$url)-&gt;toString();</template><template autoinsert="true" context="php" deleted="false" description="Renders link functionality similar to d8_l" enabled="true" name="d8_link">use Drupal\Core\Link;
+use Drupal\Core\Url;
+$$args = ['arg-a' =&gt; 'A', 'arg-b' =&gt; 'B'];
+/* $$ drupal console router:debug | search "/user " */
+$$url = Url::fromRoute('user.page', $$args);
+$$link = Link::fromTextAndUrl('Page title', $$url)-&gt;toString();</template><template autoinsert="true" context="php" deleted="false" description="To debug(creates an error) in admin/reports/dblog - watchdog was used before...&#10;" enabled="true" name="d8_log_error">\Drupal::logger('${mymodule}')-&gt;error(print_r($$data, TRUE));</template><template autoinsert="true" context="php" deleted="false" description="To debug(creates a notice) in admin/reports/dblog - watchdog was used before..." enabled="true" name="d8_log_notice">\Drupal::logger('${mymodule}')-&gt;notice(print_r($$data, TRUE));</template><template autoinsert="true" context="php" deleted="false" description="" enabled="true" name="d8_node_load">use \Drupal\node\Entity\Node;
+Node::load($$nid);</template><template autoinsert="true" context="php" deleted="false" description="Taxonomy term load" enabled="true" name="d8_taxonomy_term_load">use \Drupal\taxonomy\Entity\Term;
+Term::load($$tid);</template><template autoinsert="true" context="php" deleted="false" description="Taxonomy term load" enabled="true" name="d8_term_load">use \Drupal\taxonomy\Entity\Term;
+Term::load($$tid);</template><template autoinsert="true" context="php" deleted="false" description="To debug(creates an error) in admin/reports/dblog - watchdog was used before...&#10;" enabled="true" name="d8_watchdog_error">\Drupal::logger('${mymodule}')-&gt;error(print_r($$data, TRUE));</template><template autoinsert="true" context="php" deleted="false" description="To debug(creates a notice) in admin/reports/dblog - watchdog was used before...&#10;" enabled="true" name="d8_watchdog_notice">\Drupal::logger('${mymodule}')-&gt;notice(print_r($$data, TRUE));</template><template autoinsert="true" context="php" deleted="false" description="" enabled="true" name="d8hook_form_alter">use \Drupal\Core\Form\FormStateInterface;
+/**
+ * Implements hook_form_alter().
+ */
+function ${module_name}_form_alter(&amp;$$form, FormStateInterface $$form_state, $$form_id) {
+  ${cursor}
+}</template><template autoinsert="false" context="php-statements" deleted="false" description="echo a string" enabled="true" id="org.eclipse.php.ui.editor.templates.php.echo" name="eco">echo("${}");
+${cursor}</template><template autoinsert="false" context="php-statements" deleted="false" description="elseif statement" enabled="true" id="org.eclipse.php.ui.editor.templates.php.elif" name="elif">elseif (${condition}) {
+	${cursor};
+}
+</template><template autoinsert="false" context="php-statements" deleted="false" description="else statement" enabled="true" id="org.eclipse.php.ui.editor.templates.php.else" name="els">else {
+	${cursor};
+}
+</template><template autoinsert="false" context="php-type-members" deleted="false" description="function statement" enabled="true" id="org.eclipse.php.ui.editor.templates.php.fnc" name="fnc">function ${function_name}(${dollar}${param}) {
+	${cursor};
+}
+</template><template autoinsert="false" context="php-global-members" deleted="false" description="function statement" enabled="true" id="org.eclipse.php.ui.editor.templates.php.fnc1" name="fnc">function ${function_name}(${dollar}${param}) {
+	${cursor};
+}
+</template><template autoinsert="false" context="php-statements" deleted="false" description="for statement" enabled="true" id="org.eclipse.php.ui.editor.templates.php.for" name="for">for (${dollar}${index} = 0; ${dollar}${index} &lt; ${number_variable}; ${dollar}${index}++) {
+	${line_selection}${cursor}
+}</template><template autoinsert="false" context="php-statements" deleted="false" description="foreach statement" enabled="true" id="org.eclipse.php.ui.editor.templates.php.foreach" name="fore">foreach (${dollar}${array_expression} as ${dollar}${value}) {
+	${cursor};
+}
+</template><template autoinsert="false" context="php-statements" deleted="false" description="foreach with key statement" enabled="true" id="org.eclipse.php.ui.editor.templates.php.foreachkey" name="forek">foreach (${dollar}${array_expression} as ${dollar}${key} =&gt; ${dollar}${value}) {
+	${cursor};
+}
+</template><template autoinsert="false" context="php-type-members" deleted="false" description="function statement" enabled="true" id="org.eclipse.php.ui.editor.templates.php.function" name="function">function ${function_name}(${dollar}${param}) {
+	${cursor};
+}
+</template><template autoinsert="false" context="php-global-members" deleted="false" description="function statement" enabled="true" id="org.eclipse.php.ui.editor.templates.php.function1" name="function">function ${function_name}(${dollar}${param}) {
+	${cursor};
+}
+</template><template autoinsert="false" context="php-statements" deleted="false" description="if statement" enabled="true" id="org.eclipse.php.ui.editor.templates.php.if" name="if">if (${condition}) {
 	${cursor};
 }
 </template><template autoinsert="false" context="php-statements" deleted="false" description="instanceof statement" enabled="true" id="org.eclipse.php.ui.editor.templates.php.instanceof" name="inst">if (${dollar}${variable} instanceof ${class}) {
