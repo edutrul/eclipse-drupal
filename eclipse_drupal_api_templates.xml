@@ -1617,7 +1617,8 @@ function ${module_name}_xmlrpc() {
  */
 function ${module_name}_xmlrpc_alter(&amp;$$methods) {
   ${cursor}
-}</template><template autoinsert="true" context="php" deleted="false" description="Renders link functionality" enabled="true" name="d8_l">use Drupal\Core\Link;
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 8 renders a form" enabled="true" name="d8_drupal_get_form">$$search_form = \Drupal::formBuilder()-&gt;getForm('Drupal\scotts_search\Form\SearchForm');
+</template><template autoinsert="true" context="php" deleted="false" description="Renders link functionality" enabled="true" name="d8_l">use Drupal\Core\Link;
 use Drupal\Core\Url;
 $$args = ['arg-a' =&gt; 'A', 'arg-b' =&gt; 'B'];
 /* $$ drupal console router:debug | search "/user " */
@@ -1636,6 +1637,44 @@ Term::load($$tid);</template><template autoinsert="true" context="php" deleted="
  */
 function ${module_name}_form_alter(&amp;$$form, FormStateInterface $$form_state, $$form_id) {
   ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Search Api solr documents alter in order to update indexes" enabled="true" name="d8hook_search_api_documents_alter">/**
+ * Implements hook_search_api_solr_documents_alter().
+ */
+function ${mymodule}_search_api_solr_documents_alter(array $$documents, IndexInterface $$index, array $$items) {
+  foreach ($$documents as $$document) {
+    if ($$document-&gt;ss_type == 'product' &amp;&amp; !empty($$document-&gt;sm_field_product_images__uri)) {
+      // Index the absolute URL of a product image so they can
+      // be used directly to display on other sites.
+      $$image_urls = [];
+      foreach ((array) $$document-&gt;sm_field_product_images__uri as $$uri) {
+        $$image_urls[] = file_create_url($$uri);
+      }
+
+      // Index the first image as the primary image.
+      $$document-&gt;setField('sm_field_product_images__uri', $$image_urls[0]);
+
+      // Index full list of product images separately.
+      $$document-&gt;setField('sm_field_product_images', $$image_urls);
+    }
+  }
+}</template><template autoinsert="true" context="php" deleted="false" description="In order to alter views, pass arguments, add attachment, etc" enabled="true" name="d8hook_views_pre_view">/**
+ * Implements hook_views_pre_view().
+ */
+function ${my_module}_views_pre_view(ViewExecutable $$view, $$display_id, array &amp;$$args) {
+  // Get arguments from url /{taxonomy_term}/...
+  if ($$view-&gt;id() == 'scotts_product_list' &amp;&amp; $$display_id == 'product_list_block') {
+    $$term = \Drupal::request()-&gt;attributes-&gt;get('taxonomy_term');
+
+    // Apply product category argument.
+    if ($$term) {
+      $$args[0] = $$term-&gt;getName();
+    }
+
+    // Apply brand query argument(s). Uses AND grouping logic.
+    if ($$brands = scotts_core_site_brands()) {
+      $$args[1] = implode('+', $$brands);
+    }
+  }
 }</template><template autoinsert="false" context="php-statements" deleted="false" description="echo a string" enabled="true" id="org.eclipse.php.ui.editor.templates.php.echo" name="eco">echo("${}");
 ${cursor}</template><template autoinsert="false" context="php-statements" deleted="false" description="elseif statement" enabled="true" id="org.eclipse.php.ui.editor.templates.php.elif" name="elif">elseif (${condition}) {
 	${cursor};
